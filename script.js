@@ -5,31 +5,41 @@ fetch('https://jsonplaceholder.typicode.com/todos')
         // Find the list element by its ID
         const todoList = document.getElementById('todo-list');
 
-        // Sort data by ID in descending order
+        // Sort the todos by ID in descending order
         data.sort((a, b) => b.id - a.id);
 
         // Loop through the fetched data
         data.forEach(todo => {
-            // Check if the todo is not completed
-            if (!todo.completed) {
-                // Create a new list item for each uncompleted todo
-                const listItem = document.createElement('li');
-                listItem.className = 'flex justify-between items-center p-4 bg-gray-200 rounded-lg mb-2';
+            // Create a new list item for each todo
+            const listItem = document.createElement('li');
+            listItem.classList.add('todo-item'); // Add the new class for styling
 
-                // Create a checkbox
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
+            // Create a div to hold the todo title and details
+            const todoDetails = document.createElement('div');
 
-                // Set the text content to include User ID, ID, and title
-                const textContent = document.createTextNode(`User ID: ${todo.userId}, ID: ${todo.id}, Title: ${todo.title}`);
+            // Create a strong title element for the todo
+            const todoTitle = document.createElement('strong');
+            todoTitle.textContent = todo.title;
 
-                // Append the text and checkbox to the list item
-                listItem.appendChild(textContent);
-                listItem.appendChild(checkbox);
+            // Create a small element for additional info
+            const todoInfo = document.createElement('small');
+            todoInfo.textContent = `User ID: ${todo.userId}, ID: ${todo.id}`;
 
-                // Append the new list item to the ul element
-                todoList.appendChild(listItem);
-            }
+            // Append the title and additional info to the details div
+            todoDetails.appendChild(todoTitle);
+            todoDetails.appendChild(todoInfo);
+
+            // Create a checkbox input
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox'; // Define as checkbox
+            checkbox.checked = todo.completed; // Tick the checkbox if todo is completed
+
+            // Append the checkbox and the details div to the list item
+            listItem.appendChild(todoDetails);
+            listItem.appendChild(checkbox);
+
+            // Append the new list item to the ul element
+            todoList.appendChild(listItem);
         });
     })
     .catch(error => console.error('Error fetching the todos:', error));
