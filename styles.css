@@ -9,12 +9,12 @@ body {
       text-align: center;
       padding: 16px;
       border-radius: 8px;
-      margin-bottom: 24px; /* Margin below the banner */
+      margin-bottom: 24px;
   }
   
   .header {
       font-weight: 600;
-      background-color: #E5E7EB; 
+      background-color: rgb(230,230, 230); 
       margin-bottom: 15px; 
       padding: 10px; /
       border-radius: 8px; 
@@ -22,24 +22,23 @@ body {
   }
   
   .todo-list {
-      background-color: #ddd8d8; 
-      padding: 16px; /* Adds some padding */
-      border-radius: 8px; /* Optional: Adds rounded corners */
-  }
+      background-color: rgb(230,230, 230); 
+      padding: 16px; 
+      border-radius: 8px;
   
   .todo-item {
       font-size: x-large;
-      margin-bottom: 16px; /* Space between todos */
-      padding: 16px; /* Padding inside each todo item */
-      background-color: #D1D5DB; /* Tailwind's bg-gray-200 */
-      border-radius: 8px; /* Rounded corners for todo items */
+      margin-bottom: 16px;
+      padding: 16px;
+      background-color: rgb(220,220,220);
+      border-radius: 8px;
       display: flex;
-      align-items: start; /* Align checkbox to the top */
+      align-items: start;
   }
   
   .todo-item small {
-      color: #4B5563; /* Tailwind's text-gray-600 */
+      color: #4B5563;
       display: block;
-      margin-top: 8px; /* Margin above small text */
+      margin-top: 8px; 
   }
   
