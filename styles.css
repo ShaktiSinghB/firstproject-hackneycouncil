@@ -1,0 +1,29 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  color: #333;
+  font-weight: 600; /* Makes the header bold */
+  background-color: #e5e5e6;
+  margin-bottom: 15px; /* Margin below the header */
+  padding: 10px; /* Adds some padding around the text */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  background-color: #f2eef5;
+  margin: 10px 0; /* Vertical margins above and below the list */
+  padding: 10px; /* Adds some padding inside the list */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+li {
+  margin: 5px 0;
+  padding: 5px; /* Padding inside each list item */
+  background-color: #e0e0e0; /* White background for each list item */
+  border-radius: 3px; /* Rounded corners for list items */
+}
