@@ -17,9 +17,13 @@ fetch('https://jsonplaceholder.typicode.com/todos')
             // Create a div to hold the todo title and details
             const todoDetails = document.createElement('div');
 
-            // Create a strong title element for the todo
-            const todoTitle = document.createElement('strong');
-            todoTitle.textContent = todo.title;
+            // Create an anchor element for the todo title
+            const todoTitle = document.createElement('a');
+            todoTitle.href = `https://jsonplaceholder.typicode.com/todos/${todo.id}`; // Set the hyperlink
+            todoTitle.textContent = todo.title; // Set the text content to the todo title
+            todoTitle.setAttribute('target', '_blank'); // Open the link in a new tab
+            todoTitle.style.textDecoration = 'none'; // Remove underline from hyperlink
+            todoTitle.style.color = 'black'; // Ensure the text is readable
 
             // Create a small element for additional info
             const todoInfo = document.createElement('small');
