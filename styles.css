@@ -1,53 +1,62 @@
 body {
-      font-family: 'Poppins', sans-serif;
-      margin: 20px;
-  }
-  
-  .banner {
-      background-color: #3B82F6;
-      color: white;
-      text-align: center;
-      padding: 16px;
-      border-radius: 8px;
-      margin-bottom: 8px;
-     /* background-image: url(); */
-  }
-  
-  .header {
-      font-weight: 600;
-      background-color: rgb(230,230, 230); 
-      padding: 10px; 
-      border-radius: 8px; 
-      color: #1F2937;
-      margin-bottom: 1px; 
-      width: 48%;
-      cursor: pointer;
-      
-  }
-  
-  
-  .todo-list {
-      background-color: rgb(230,230, 230); 
-      padding: 8px; 
-      border-radius: 20px;
-      font-size: large;
-      width: 50%;
-  }
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+}
 
-  .todo-item {
-      font-size: medium;
-      margin-bottom: 16px;
-      padding: 16px;
-      background-color: rgb(220,220,220);
-      border-radius: 16px;
-      display: flex;
-      align-items: start;
-  }
-  
-  .todo-item small {
-      color: #14171b;
-      display: block;
-      margin-top: 8px; 
+.banner {
+    background-color: #3B82F6;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+   /* background-image: url(); */
+}
 
-  }
-  
+.header {
+    font-weight: 600;
+    background-color: rgb(230,230, 230); 
+    padding: 10px; 
+    border-radius: 8px; 
+    color: #1F2937;
+    margin-bottom: 1px; 
+    width: 48%;
+    cursor: pointer;
+}
+
+.header:hover {
+    background-color: #3B82F6;
+    color: white;
+}
+
+
+
+.todo-list {
+    background-color: rgb(230,230, 230); 
+    padding: 8px; 
+    border-radius: 20px;
+    font-size: large;
+    width: 50%;
+}
+
+
+.todo-item {
+    font-size: medium;
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: rgb(220,220,220);
+    border-radius: 16px;
+    display: flex;
+    align-items: start;
+}
+
+.todo-item:hover {
+    background-color: #3B82F6;
+}
+
+.todo-item small {
+    color: #14171b;
+    display: block;
+    margin-top: 8px; 
+
+}
