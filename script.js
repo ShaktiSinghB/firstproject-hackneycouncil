@@ -1,49 +1,49 @@
 // Fetch the todos from the API
-fetch("https://jsonplaceholder.typicode.com/todos")
-  .then((response) => response.json()) // Convert the response to JSON
-  .then((data) => {
-    // Find the list element by its ID
-    const todoList = document.getElementById("todo-list");
+fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(response => response.json()) // Convert the response to JSON
+    .then(data => {
+        const todoList = document.getElementById('todo-list');
 
-    // Sort the todos by ID in descending order
-    data.sort((a, b) => b.id - a.id);
+        // Sort the todos by ID in descending order
+        data.sort((a, b) => b.id - a.id);
 
-    // Loop through the fetched data
-    data.forEach((todo) => {
-      // Create a new list item for each todo
-      const listItem = document.createElement("li");
-      listItem.classList.add("todo-item"); // Add the new class for styling
+        // Function to display todos
+        const displayTodos = (todos) => {
+            todoList.innerHTML = ''; // Clear the current list
+            todos.forEach(todo => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('todo-item');
+                
+                const todoDetails = document.createElement('div');
+                const todoTitle = document.createElement('strong');
+                todoTitle.textContent = todo.title;
+                const todoInfo = document.createElement('small');
+                todoInfo.textContent = `User ID: ${todo.userId}, ID: ${todo.id}`;
 
-      // Create a div to hold the todo title and details
-      const todoDetails = document.createElement("div");
+                todoDetails.appendChild(todoTitle);
+                todoDetails.appendChild(todoInfo);
 
-      // Create an anchor element for the todo title
-      const todoTitle = document.createElement("a");
-      todoTitle.href = `todo_details/index.html?id=${todo.id}`; // Link to the details page with the todo ID
-      todoTitle.textContent = todo.title; // Set the text content to the todo title
-    
-      todoTitle.style.textDecoration = "none"; // Remove underline from hyperlink
-      todoTitle.style.color = "black"; // Ensure the text is readable
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = todo.completed;
 
-      // Create a small element for additional info
-      const todoInfo = document.createElement("small");
-      todoInfo.textContent = `User ID: ${todo.userId}, ID: ${todo.id}`;
+                listItem.appendChild(todoDetails);
+                listItem.appendChild(checkbox);
+                todoList.appendChild(listItem);
+            });
+        };
 
-      // Append the title and additional info to the details div
-      todoDetails.appendChild(todoTitle);
-      todoDetails.appendChild(todoInfo);
+        // Display all todos initially
+        displayTodos(data);
 
-      // Create a checkbox input
-      const checkbox = document.createElement("input");
-      checkbox.type = "checkbox"; // Define as checkbox
-      checkbox.checked = todo.completed; // Tick the checkbox if todo is completed
-
-      // Append the checkbox and the details div to the list item
-      listItem.appendChild(todoDetails);
-      listItem.appendChild(checkbox);
-
-      // Append the new list item to the ul element
-      todoList.appendChild(listItem);
-    });
-  })
-  .catch((error) => console.error("Error fetching the todos:", error));
+        // Search bar functionality
+        const searchBar = document.getElementById('search-bar');
+        searchBar.addEventListener('input', (event) => {
+            const searchTerm = event.target.value.toLowerCase();
+            const filteredTodos = data.filter(todo => 
+                todo.title.toLowerCase().includes(searchTerm)
+            );
+            displayTodos(filteredTodos);
+        });
+    })
+    .catch(error => console.error('Error fetching the todos:', error));
