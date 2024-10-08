@@ -15,12 +15,20 @@ fetch('https://jsonplaceholder.typicode.com/todos')
                 listItem.classList.add('todo-item');
                 
                 const todoDetails = document.createElement('div');
-                const todoTitle = document.createElement('strong');
-                todoTitle.textContent = todo.title;
+
+                // Create the hyperlink for the todo title
+                const todoLink = document.createElement('a');
+                todoLink.href = `https://jsonplaceholder.typicode.com/todos/${todo.id}`; // Hyperlink to todo API
+                todoLink.textContent = todo.title; // Set the title as the link text
+                todoLink.target = '_blank';
+                
+                
+
                 const todoInfo = document.createElement('small');
                 todoInfo.textContent = `User ID: ${todo.userId}, ID: ${todo.id}`;
 
-                todoDetails.appendChild(todoTitle);
+                // Append the hyperlink and additional info
+                todoDetails.appendChild(todoLink); // Adding hyperlink
                 todoDetails.appendChild(todoInfo);
 
                 const checkbox = document.createElement('input');
@@ -30,6 +38,11 @@ fetch('https://jsonplaceholder.typicode.com/todos')
                 listItem.appendChild(todoDetails);
                 listItem.appendChild(checkbox);
                 todoList.appendChild(listItem);
+
+                todoLink.href = `todo_details/index.html?id=${todo.id}`; // Link to details page
+                todoLink.textContent = todo.title;
+
+                
             });
         };
 
