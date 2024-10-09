@@ -48,11 +48,15 @@ fetch("https://jsonplaceholder.typicode.com/todos")
     // Search bar functionality
     const searchBar = document.getElementById("search-bar");
     searchBar.addEventListener("input", (event) => {
-      const searchTerm = event.target.value.toLowerCase();
+      const searchTerm = event.target.value.toLowerCase().trim();
+      const searchWords = searchTerm.split(' ');
       const filteredTodos = data.filter((todo) =>
-        todo.title.toLowerCase().includes(searchTerm)
-      );
-      displayTodos(filteredTodos);
+          searchWords.every(word =>
+              todo.title.toLowerCase().includes(word)
+          )
+       );
+       displayTodos(filteredTodos);
+    
     });
   })
   .catch((error) => console.error("Error fetching the todos:", error));
