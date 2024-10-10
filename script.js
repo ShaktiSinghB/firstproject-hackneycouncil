@@ -14,6 +14,13 @@ fetch("https://jsonplaceholder.typicode.com/todos")
         const listItem = document.createElement("li");
         listItem.classList.add("todo-item");
 
+         // Wrap the entire listItem in a click event listener
+         listItem.addEventListener('click', () => {
+          // Redirect to the corresponding todo details page
+          window.location.href = `todo_details/index.html?id=${todo.id}`;
+        });
+        
+        // Create a div to hold the todo title and details
         const todoDetails = document.createElement("div");
 
         // Create the hyperlink for the todo title
