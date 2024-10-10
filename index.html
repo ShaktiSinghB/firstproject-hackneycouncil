@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark"
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,64 +9,59 @@
 </head>
 
 <body>
+  <!-- Button to Open the Sidebar (Offcanvas) -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-start">
+        <button class="btn btn-outline-primary mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar-offcanvas" aria-controls="sidebar-offcanvas">
+          Todos
+        </button>
+      </div>
+    </div>
+  </div>
 
-  <!-- Header Section -->
-    <div class="container-fluid p-5 bg-primary text-white text-center">
-      <h1>My First Project</h1>
-      <p>Updates Pending..</p> 
+  <!-- Sidebar Section (Offcanvas) -->
+  <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="sidebar-offcanvas" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Todos</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
-          <!-- Navbar -->
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="https://www.bbc.co.uk/weather/2643743" target="_blank">Do you need an umbrella?</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/ShaktiSinghB/firstproject-hackneycouncil" target="_blank">GitHub</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="https://randomwordgenerator.com/motivational-quote.php" target="_blank">Quote of The Day</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-
-
-    <!-- Main Content Container -->
-    <div class="container mt-5">
-      
-      <!-- Title with Link -->
-      <h1 class="header">
-        <a href="https://jsonplaceholder.typicode.com/todos/1" target="_blank" class="title-link text-decoration-none text-primary">Todos</a> 
-      </h1>
-
-      <!-- Search Bar -->
+    <div class="offcanvas-body">
+      <!-- Search Bar (Visible all the time) -->
       <div class="input-group mb-3">
-        <input type="text" id="search-bar" class="form-control" placeholder="Search by title..." aria-label="Search by title" aria-describedby="button-addon2">
-        <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
+        <input type="text" id="search-bar" class="form-control" placeholder="Search todos..." aria-label="Search by title" aria-describedby="button-addon2">
+        <button class="btn btn-outline-light" type="button" id="button-addon2">Search</button>
       </div>
 
       <!-- Todo List -->
-      <ul id="todo-list" class="list-group">
+      <ul id="todo-list" class="list-group list-group-flush">
         <!-- The list will be populated with todos here -->
+        <li class="list-group-item">Todo 1</li>
+        <li class="list-group-item">Todo 2</li>
+        <li class="list-group-item">Todo 3</li>
       </ul>
+    </div>
+  </div>
 
+  <!-- Main Content Section -->
+  <main class="container mt-5">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Welcome to the Todo App</h1>
+      <p>Updates Pending...</p>
     </div>
 
-    <!-- Link to JavaScript file -->
-    <script src="script.js"></script>
+    <!-- Main Content Placeholder -->
+    <div class="container">
+      <p>This is where you can manage your daily tasks and keep track of your todos.</p>
+    </div>
+  </main>
 
-    <!-- Link to Bootstrap CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-   
-    
+  <!-- Link to JavaScript file -->
+  <script src="script.js"></script>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
-
 </html>

@@ -1,6 +1,14 @@
 body {
+
     font-family: 'Poppins', sans-serif;
     margin: 20px;
+
+    /* Background image properties */
+    background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5V7T2O1WgGVW0hs2C4qzD3NBKxXPXOb0slOM0PebLURCssRqEkL5N3Kdodl1CKOpFoFHn0gVmfzxm6eILsWWT3Drt7yldm8IrwDe05TlcFa5mhiXUi6u7mrCgzFWi-I4DZUQfguc3D2rbGTp5BBwxdc4L4dggbvdadvg7G8OaOd2eAS4ZPTYpoMtyoA/w1436-h808-rw/v2-MINIMALIST-LANDSCAPE-SUN-4k.png'); /* Replace with your image URL */
+    background-size: cover; /* Make sure the image covers the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-attachment: fixed; /* Keep the background fixed on scroll */
 }
 
 .banner {

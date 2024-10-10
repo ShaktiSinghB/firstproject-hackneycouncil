@@ -14,12 +14,12 @@ fetch("https://jsonplaceholder.typicode.com/todos")
         const listItem = document.createElement("li");
         listItem.classList.add("todo-item");
 
-         // Wrap the entire listItem in a click event listener
-         listItem.addEventListener('click', () => {
+        // Wrap the entire listItem in a click event listener
+        listItem.addEventListener("click", () => {
           // Redirect to the corresponding todo details page
           window.location.href = `todo_details/index.html?id=${todo.id}`;
         });
-        
+
         // Create a div to hold the todo title and details
         const todoDetails = document.createElement("div");
 
@@ -56,14 +56,24 @@ fetch("https://jsonplaceholder.typicode.com/todos")
     const searchBar = document.getElementById("search-bar");
     searchBar.addEventListener("input", (event) => {
       const searchTerm = event.target.value.toLowerCase().trim();
-      const searchWords = searchTerm.split(' ');
+      const searchWords = searchTerm.split(" ");
       const filteredTodos = data.filter((todo) =>
-          searchWords.every(word =>
-              todo.title.toLowerCase().includes(word)
-          )
-       );
-       displayTodos(filteredTodos);
-    
+        searchWords.every((word) => todo.title.toLowerCase().includes(word))
+      );
+      displayTodos(filteredTodos);
+
+      // Get the button and the collapse element
+      const toggleTodoButton = document.getElementById("toggle-todo-button");
+      const todoListCollapse = document.getElementById("todo-list-collapse");
+
+      // Add event listener for the collapse element
+      todoListCollapse.addEventListener("shown.bs.collapse", function () {
+        toggleTodoButton.textContent = "Hide Todos";
+      });
+
+      todoListCollapse.addEventListener("hidden.bs.collapse", function () {
+        toggleTodoButton.textContent = "Show Todos";
+      });
     });
   })
   .catch((error) => console.error("Error fetching the todos:", error));
